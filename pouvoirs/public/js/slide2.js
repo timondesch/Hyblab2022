@@ -10,31 +10,22 @@ function css(elements, style) {
 
 
 const slide = document.querySelector("#second-slide");
-
-const header = document.createElement("div");
-const title = document.createElement("h5");
-title.appendChild(document.createTextNode("Pouvoir 1"));
-css([header], {
-  'background-color' : 'purple',
-  'color' : 'yellow',
-  'height' : '15%',
-  'text-align' : 'center'
-});
-const subtitle = document.createElement("p");
-subtitle.appendChild(document.createTextNode("Nommer le premier ministre"));
-css([subtitle], {
-  'text-transform' : 'uppercase',
-  'font-size' : '25%'
-});
-css([title], {
-  'font-size' : '55%'
+slide.addEventListener('click', () => {
+  animateLoading();
 })
 
+const header = document.createElement("div");
+header.style.height = '15%';
+const imgMenu = document.createElement("img");
+imgMenu.setAttribute("src", "img/menu1.svg")
+imgMenu.setAttribute("width", "90%");
+header.appendChild(imgMenu);
 
 // info
 let state = 0;
 
 const infos = document.createElement("div");
+infos.style.height = '85%';
 css([infos], {
   'margin' : 'auto',
   'width' : '80%',
@@ -44,13 +35,32 @@ css([infos], {
   'flex-direction' : 'column'
 })
 const img = document.createElement("img");
-img.setAttribute("src", "img/circle.svg")
-img.setAttribute("height", "150px");
+img.setAttribute("src", "img/chaise.svg")
+img.setAttribute("height", "300px");
 css([img], {
-  "opacity" : "35%",
   'display' : 'block',
   "margin" : "15px auto"
 })
+
+let illustration = {
+  illu: '300px',
+  infos: '85%'
+}
+
+function animateLoading() {
+  anime({
+    targets: illustration,
+    illu: '300px',
+    infos: '50%',
+    loop: false,
+    easing: 'easeInOutCubic',
+    update: function(anim) {
+      img.style.height = illustration.illu;
+      infos.style.height = illustration.infos;
+    }
+  })
+};
+
 infos.appendChild(img);
 let displayedText = document.createElement("p");
 const originalText = "Moua est accueilli par un membre de l'Élysée. Le conseiller de l'ex président lui demande : </br><b>Comment souhaitez-vous gérer la France pendant l'absence momentanée du Président ?</b>";
@@ -86,6 +96,9 @@ function changeText(nb, txt, btn) {
     state = 0;
   }
   else {
+    x1.style.background= "purple";
+    x2.style.background= "purple";
+    x3.style.background= "purple";
     displayedText.innerHTML = txt;
     btn.style.backgroundColor = colors[nb-1];
     state = nb;
@@ -115,8 +128,7 @@ buttons.appendChild(x2);
 buttons.appendChild(x3);
 
 
-header.appendChild(title);
-header.appendChild(subtitle);
+
 slide.appendChild(header);
 slide.appendChild(infos);
 slide.appendChild(buttons);

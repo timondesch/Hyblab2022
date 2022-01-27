@@ -8,22 +8,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css" />
-  <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
-  <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
   <script src="js/slide1.js" defer></script>
   <script src="js/slide2.js" defer></script>
+  <script src="js/slide3.js" defer></script>
   <script src="js/index.js" defer></script>
 </head>
 <body>
     <!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
     <div id="container">
       <!-- Le loader-->
-      <section id="loader">
-        <div id="loader-img" class="ld ld-ring ld-cycle"></div>
-        <p id="loader-text">Veuillez patienter...</p>
-      </section>
       <div id="mySwiper" class="swiper">
         <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
         <main class = "swiper-wrapper">
@@ -34,9 +30,7 @@
                 
                 <img src="img/logo_hyblab.png" id="logo-hyblab" alt="logo hyblab"></img>
 
-                <video id="background-video" class="video-js" data-setup='{"autoplay": true, "loop" : true, "fill": true, "muted": true}'>
-                    <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-                </video>
+    
 
                 <!-- le footer sera rempli à partir de données lues dans un fichier Json-->
                 <footer></footer>
