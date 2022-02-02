@@ -468,15 +468,16 @@ b {
 #p4-bulle-pm {
   position: absolute;
   width: 85%;
-  top: 20%;
+  top: 40%;
   left: 5.5%;
 }
 
 #p4-bulle-container p {
+  color:white;
   position: absolute;
   font-size: 15%;
   width: 68%;
-  top: 23%;
+  top: 43%;
   left: 16%;
   z-index: 2;
 }
@@ -525,22 +526,22 @@ b {
 }
 
 #assemblee {
-  top: 55%;
+  top: 100%;
   left: 10%;
 }
 
 #maires {
-  top: 55%;
+  top: 100%;
   right: 10%;
 }
 
 #conseil {
-  top:77%;
+  top:120%;
   left: 10%;
 }
 
 #prime {
-  top: 77%;
+  top: 120%;
   right: 10%;
 }
 
